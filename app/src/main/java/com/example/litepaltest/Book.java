@@ -7,6 +7,7 @@ public class Book {
     private double price;
     private int pages;
     private String name;
+    private String press;
 
     public int getId() {
         return id;
@@ -46,5 +47,13 @@ public class Book {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPress() {
+        return press;
+    }
+
+    public void setPress(String press) {
+        this.press = press;
     }
 }
