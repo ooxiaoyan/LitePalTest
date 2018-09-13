@@ -34,5 +34,21 @@ public class MainActivity extends AppCompatActivity {
                 book.save();
             }
         });
+
+        Button updateData = findViewById(R.id.update_data);
+        updateData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Book book = new Book();
+                book.setName("THe Lost Symbol");
+                book.setAuthor("Dan Brown");
+                book.setPages(510);
+                book.setPrice(19.95);
+                book.setPress("Unknow");
+                book.save();
+                book.setPrice(10.99);
+                book.save();
+            }
+        });
     }
 }
