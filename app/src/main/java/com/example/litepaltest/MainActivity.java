@@ -1,11 +1,13 @@
 package com.example.litepaltest;
 
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import org.litepal.LitePal;
+import org.litepal.crud.DataSupport;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,6 +44,14 @@ public class MainActivity extends AppCompatActivity {
                 Book book = new Book();
                 book.setToDefault("pages");
                 book.updateAll();
+            }
+        });
+
+        Button deleteData = findViewById(R.id.delete_data);
+        deleteData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DataSupport.deleteAll(Book.class, "price < ?", "15");
             }
         });
     }
